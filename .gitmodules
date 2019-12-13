@@ -1,0 +1,6 @@
+[submodule "JoyeuseAddons"]
+	path = JoyeuseAddons
+	url = https://github.com/RiseRobotRise/JoyeuseAddons.git
+[submodule "addons"]
+	path = addons
+	url = https://github.com/RiseRobotRise/JoyeuseAddons.git
