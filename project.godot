@@ -1,0 +1,259 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Character",
+"class": "AI_Character",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Characters/AI.gd"
+}, {
+"base": "SkeletonIK",
+"class": "AutoIK",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/AutoIK/AutoIK.gd"
+}, {
+"base": "AudioStreamPlayer3D",
+"class": "AutoSound3D",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/General_systems/Auto_play_sound.gd"
+}, {
+"base": "Position3D",
+"class": "BoneHandler",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/AutoIK/BoneHandler.gd"
+}, {
+"base": "KinematicBody",
+"class": "Character",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Characters/Character.gd"
+}, {
+"base": "ScatterDistribution",
+"class": "DistributionGrid",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_grid.gd"
+}, {
+"base": "ScatterDistribution",
+"class": "DistributionUniform",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_uniform.gd"
+}, {
+"base": "ScatterDistribution",
+"class": "DistributionUnique",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_unique.gd"
+}, {
+"base": "Area",
+"class": "GravityArea",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/General_systems/GravityArea.gd"
+}, {
+"base": "Position3D",
+"class": "NavigationWaypoint",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Navigation/Navigation_Waypoint.gd"
+}, {
+"base": "Path",
+"class": "Navigation_Path",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Navigation/Navmesh_Path.gd"
+}, {
+"base": "Character",
+"class": "Player",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Characters/Player.gd"
+}, {
+"base": "Spatial",
+"class": "PolygonPath",
+"language": "GDScript",
+"path": "res://addons/polygon_path/polygon_path.gd"
+}, {
+"base": "Reference",
+"class": "PolygonPathDragInfo",
+"language": "GDScript",
+"path": "res://addons/polygon_path/drag_info.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileJitterSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_jitter_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfilePositionSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_position_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileRotationSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_rotation_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileScaleNoise",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_scale_noise.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileScaleSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_scale_simple.gd"
+}, {
+"base": "RigidBody",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Guns/projectile.gd"
+}, {
+"base": "Weapon",
+"class": "RaycastWeapon",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Guns/raycast_weapon.gd"
+}, {
+"base": "PolygonPath",
+"class": "ScatterBase",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_base.gd"
+}, {
+"base": "Reference",
+"class": "ScatterCommon",
+"language": "GDScript",
+"path": "res://addons/scatter/src/common.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterDistribution",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_base.gd"
+}, {
+"base": "ScatterBase",
+"class": "ScatterDuplicates",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_duplicates.gd"
+}, {
+"base": "PolygonPath",
+"class": "ScatterExclude",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_exclude.gd"
+}, {
+"base": "Spatial",
+"class": "ScatterItem",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_item.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterLogic",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_base.gd"
+}, {
+"base": "ScatterLogic",
+"class": "ScatterLogicGeneric",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_generic.gd"
+}, {
+"base": "ScatterLogic",
+"class": "ScatterLogicWall",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_wall.gd"
+}, {
+"base": "ScatterBase",
+"class": "ScatterMultiMesh",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_multi_mesh.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterProfile",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_base.gd"
+}, {
+"base": "Resource",
+"class": "ScatterResource",
+"language": "GDScript",
+"path": "res://addons/scatter/src/scatter_resource.gd"
+}, {
+"base": "Spatial",
+"class": "Sound_Smell_Manager",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/General_systems/Sound_Smell_system.gd"
+}, {
+"base": "Spatial",
+"class": "SpawnPoint",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/General_systems/SpawnPoint.gd"
+}, {
+"base": "Spatial",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Guns/weapon.gd"
+}, {
+"base": "KinematicBody",
+"class": "Workstation",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Objectives/Workstation.gd"
+}, {
+"base": "Navigation",
+"class": "World_Navigator",
+"language": "GDScript",
+"path": "res://joyeuse/Basics/Navigation/WorldNavigation.gd"
+} ]
+_global_script_class_icons={
+"AI_Character": "",
+"AutoIK": "",
+"AutoSound3D": "",
+"BoneHandler": "",
+"Character": "",
+"DistributionGrid": "",
+"DistributionUniform": "",
+"DistributionUnique": "",
+"GravityArea": "",
+"NavigationWaypoint": "",
+"Navigation_Path": "",
+"Player": "res://joyeuse/icons/player.png",
+"PolygonPath": "",
+"PolygonPathDragInfo": "",
+"ProfileJitterSimple": "",
+"ProfilePositionSimple": "",
+"ProfileRotationSimple": "",
+"ProfileScaleNoise": "",
+"ProfileScaleSimple": "",
+"Projectile": "",
+"RaycastWeapon": "",
+"ScatterBase": "",
+"ScatterCommon": "",
+"ScatterDistribution": "",
+"ScatterDuplicates": "",
+"ScatterExclude": "",
+"ScatterItem": "",
+"ScatterLogic": "",
+"ScatterLogicGeneric": "",
+"ScatterLogicWall": "",
+"ScatterMultiMesh": "",
+"ScatterProfile": "",
+"ScatterResource": "",
+"Sound_Smell_Manager": "res://joyeuse/icons/SH_SYSTEM.png",
+"SpawnPoint": "",
+"Weapon": "",
+"Workstation": "res://joyeuse/icons/workstation.png",
+"World_Navigator": "res://joyeuse/icons/icon.png"
+}
+
+[application]
+
+config/name="Joyeux Template"
+config/description="Empty Joyeux project"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gdnative]
+
+singletons=[  ]
+
+[rendering]
+
+environment/default_clear_color=Color( 0, 0, 0, 1 )
